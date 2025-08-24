@@ -29,7 +29,9 @@ class Pallete {
       backgroundColor: drawerColor,
     ),
     primaryColor: redColor,
-    backgroundColor: drawerColor, // will be used as alternative background color
+    colorScheme: const ColorScheme.dark().copyWith(
+      background: drawerColor,
+    ),
   );
 
   static var lightModeAppTheme = ThemeData.light().copyWith(
@@ -46,7 +48,9 @@ class Pallete {
       backgroundColor: whiteColor,
     ),
     primaryColor: redColor,
-    backgroundColor: whiteColor,
+    colorScheme: const ColorScheme.light().copyWith(
+      background: whiteColor,
+    ),
   );
 }
 
