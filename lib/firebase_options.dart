@@ -47,20 +47,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBTa5m4-ePHiM5PPrQQj4LugraI5ADEk3M',
-    appId: '1:380609523336:web:d30895dbd69584a931b93d',
-    messagingSenderId: '380609523336',
-    projectId: 'reddit-clone-tutorial-8091a',
-    authDomain: 'reddit-clone-tutorial-8091a.firebaseapp.com',
-    storageBucket: 'reddit-clone-tutorial-8091a.appspot.com',
+    apiKey: 'AIzaSyADivc4sXGp1qC6r9jUvBJDwAr9pBOnnvI',
+    appId: '1:534169808092:web:YOUR_WEB_APP_ID',
+    messagingSenderId: '534169808092',
+    projectId: 'flutter-reddit-clone-8bb54',
+    authDomain: 'flutter-reddit-clone-8bb54.firebaseapp.com',
+    storageBucket: 'flutter-reddit-clone-8bb54.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAxyQ7EgDw-ZSrCTqnBStYo_OIPCfbmE-4',
-    appId: '1:380609523336:android:bb576b87cbb505fd31b93d',
-    messagingSenderId: '380609523336',
-    projectId: 'reddit-clone-tutorial-8091a',
-    storageBucket: 'reddit-clone-tutorial-8091a.appspot.com',
+    apiKey: 'AIzaSyADivc4sXGp1qC6r9jUvBJDwAr9pBOnnvI',
+    appId: '1:534169808092:android:cec6dc6825948382c25819',
+    messagingSenderId: '534169808092',
+    projectId: 'flutter-reddit-clone-8bb54',
+    storageBucket: 'flutter-reddit-clone-8bb54.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

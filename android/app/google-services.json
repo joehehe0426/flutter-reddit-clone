@@ -1,49 +1,42 @@
 {
   "project_info": {
-    "project_number": "380609523336",
-    "project_id": "reddit-clone-tutorial-8091a",
-    "storage_bucket": "reddit-clone-tutorial-8091a.appspot.com"
+    "project_number": "534169808092",
+    "project_id": "flutter-reddit-clone-8bb54",
+    "storage_bucket": "flutter-reddit-clone-8bb54.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:380609523336:android:bb576b87cbb505fd31b93d",
+        "mobilesdk_app_id": "1:534169808092:android:cec6dc6825948382c25819",
         "android_client_info": {
-          "package_name": "com.example.reddit_tutorial"
+          "package_name": "com.whatsup.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "380609523336-b00k6m88s2q0d15k3db4g9n8chdpl5kc.apps.googleusercontent.com",
+          "client_id": "534169808092-0d924po3ng8bct96ak3iad2o54gr3bp3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.reddit_tutorial",
-            "certificate_hash": "9b0130d7f8e1680cda2341fd2d5d4c923ee5aec1"
+            "package_name": "com.whatsup.app",
+            "certificate_hash": "975be1aa83f490cad5fd242add860eda574c2b9f"
           }
         },
         {
-          "client_id": "380609523336-j838rls6ignh3hebjvioemqg4k6okdfn.apps.googleusercontent.com",
+          "client_id": "534169808092-gvttru9oe4pg1cqd8hhc84ctqfmj5hrs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAxyQ7EgDw-ZSrCTqnBStYo_OIPCfbmE-4"
+          "current_key": "AIzaSyADivc4sXGp1qC6r9jUvBJDwAr9pBOnnvI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "380609523336-j838rls6ignh3hebjvioemqg4k6okdfn.apps.googleusercontent.com",
+              "client_id": "534169808092-gvttru9oe4pg1cqd8hhc84ctqfmj5hrs.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "380609523336-2amum5bidqtue1scvv8mbb0c11lj6k7d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.redditTutorial"
-              }
             }
           ]
         }
