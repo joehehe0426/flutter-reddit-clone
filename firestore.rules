@@ -1,0 +1,85 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read/write their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Communities - anyone can read, only authenticated users can create
+    match /communities/{communityId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && 
+        (resource.data.creatorId == request.auth.uid || 
+         request.auth.uid in resource.data.moderators);
+    }
+    
+    // Posts - anyone can read, authenticated users can create
+    match /posts/{postId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && 
+        (resource.data.authorId == request.auth.uid || 
+         request.auth.uid in get(/databases/$(database)/documents/communities/$(resource.data.communityId)).data.moderators);
+    }
+    
+    // Comments - anyone can read, authenticated users can create
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && 
+        resource.data.authorId == request.auth.uid;
+    }
+    
+    // Community members - users can read, join/leave communities
+    match /communities/{communityId}/members/{userId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // User communities - users can read their own communities
+    match /users/{userId}/communities/{communityId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // User posts - users can read/write their own posts
+    match /users/{userId}/posts/{postId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // User comments - users can read/write their own comments
+    match /users/{userId}/comments/{commentId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Awards - anyone can read, authenticated users can create
+    match /awards/{awardId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+    }
+    
+    // User awards - users can read/write their own awards
+    match /users/{userId}/awards/{awardId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Post awards - anyone can read, authenticated users can award
+    match /posts/{postId}/awards/{awardId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+    }
+    
+    // Community moderators - only community creator can manage
+    match /communities/{communityId}/moderators/{moderatorId} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/communities/$(communityId)).data.creatorId;
+    }
+    
+    // User karma - users can read their own karma
+    match /users/{userId}/karma/{karmaId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
