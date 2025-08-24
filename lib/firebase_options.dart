@@ -48,7 +48,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyADivc4sXGp1qC6r9jUvBJDwAr9pBOnnvI',
-    appId: '1:534169808092:web:YOUR_WEB_APP_ID',
+    appId: '1:534169808092:web:782fd709ce5ac4e5c25819',
     messagingSenderId: '534169808092',
     projectId: 'flutter-reddit-clone-8bb54',
     authDomain: 'flutter-reddit-clone-8bb54.firebaseapp.com',
