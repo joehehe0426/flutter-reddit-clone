@@ -9,9 +9,7 @@ import 'package:reddit_tutorial/responsive/responsive.dart';
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
-  void signInAsGuest(WidgetRef ref, BuildContext context) {
-    ref.read(authControllerProvider.notifier).signInAsGuest(context);
-  }
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,17 +21,7 @@ class LoginScreen extends ConsumerWidget {
           Constants.logoPath,
           height: 40,
         ),
-        actions: [
-          TextButton(
-            onPressed: () => signInAsGuest(ref, context),
-            child: const Text(
-              'Skip',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
+        actions: [],
       ),
       body: isLoading
           ? const Loader()
