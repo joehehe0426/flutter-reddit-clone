@@ -1,0 +1,63 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // User avatars - users can upload/update their own avatar
+    match /users/{userId}/avatar/{allPaths=**} {
+      allow read: if true; // Anyone can view avatars
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // User banners - users can upload/update their own banner
+    match /users/{userId}/banner/{allPaths=**} {
+      allow read: if true; // Anyone can view banners
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Community avatars - community creators and moderators can upload
+    match /communities/{communityId}/avatar/{allPaths=**} {
+      allow read: if true; // Anyone can view community avatars
+      allow write: if request.auth != null && 
+        (request.auth.uid == resource.metadata.creatorId || 
+         request.auth.uid in resource.metadata.moderators);
+    }
+    
+    // Community banners - community creators and moderators can upload
+    match /communities/{communityId}/banner/{allPaths=**} {
+      allow read: if true; // Anyone can view community banners
+      allow write: if request.auth != null && 
+        (request.auth.uid == resource.metadata.creatorId || 
+         request.auth.uid in resource.metadata.moderators);
+    }
+    
+    // Post images - post authors can upload images for their posts
+    match /posts/{postId}/images/{allPaths=**} {
+      allow read: if true; // Anyone can view post images
+      allow write: if request.auth != null && 
+        request.auth.uid == resource.metadata.authorId;
+    }
+    
+    // Comment images - comment authors can upload images for their comments
+    match /comments/{commentId}/images/{allPaths=**} {
+      allow read: if true; // Anyone can view comment images
+      allow write: if request.auth != null && 
+        request.auth.uid == resource.metadata.authorId;
+    }
+    
+    // Award images - anyone can view, authenticated users can upload
+    match /awards/{awardId}/images/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // General images - for any other image uploads
+    match /images/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Default rule - deny all other access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-package com.example.reddit_tutorial
+package com.whatsup.app
 
 import io.flutter.embedding.android.FlutterActivity
 

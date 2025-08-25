@@ -63,7 +63,7 @@ class PostCard extends ConsumerWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: currentTheme.drawerTheme.backgroundColor,
+              color: currentTheme.colorScheme.background,
             ),
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
