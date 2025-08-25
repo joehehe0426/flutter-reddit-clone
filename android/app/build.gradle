@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-    id 'kotlin-android'
     id 'dev.flutter.flutter-gradle-plugin'
 }
 
@@ -28,9 +27,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-   android {
-       compileSdkVersion 34
-       ndkVersion flutter.ndkVersion
+       android {
+        compileSdkVersion 33
+        ndkVersion flutter.ndkVersion
 
        compileOptions {
            sourceCompatibility JavaVersion.VERSION_1_8
