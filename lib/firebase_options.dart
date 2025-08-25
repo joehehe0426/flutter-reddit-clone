@@ -64,12 +64,12 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCLsooo3Ca2PyRj92s3qpcFPsN3jnIM17s',
-    appId: '1:380609523336:ios:b39e394ab65d90d331b93d',
-    messagingSenderId: '380609523336',
-    projectId: 'reddit-clone-tutorial-8091a',
-    storageBucket: 'reddit-clone-tutorial-8091a.appspot.com',
-    iosClientId: '380609523336-2amum5bidqtue1scvv8mbb0c11lj6k7d.apps.googleusercontent.com',
-    iosBundleId: 'com.example.redditTutorial',
+    apiKey: 'AIzaSyADivc4sXGp1qC6r9jUvBJDwAr9pBOnnvI',
+    appId: '1:534169808092:ios:YOUR_IOS_APP_ID',
+    messagingSenderId: '534169808092',
+    projectId: 'flutter-reddit-clone-8bb54',
+    storageBucket: 'flutter-reddit-clone-8bb54.firebasestorage.app',
+    iosClientId: '534169808092-YOUR_IOS_CLIENT_ID.apps.googleusercontent.com',
+    iosBundleId: 'com.whatsup.app',
   );
 }
