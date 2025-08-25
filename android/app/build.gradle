@@ -1,6 +1,8 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'dev.flutter.flutter-gradle-plugin'
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
